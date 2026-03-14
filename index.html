@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="sq">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>City Center Rentals & Mia Taxi Tirana</title>
+    <style>
+        :root {
+            --primary: #1a252f;
+            --accent: #e67e22;
+            --secondary: #27ae60;
+            --light: #f8f9fa;
+        }
+        body { font-family: 'Segoe UI', Arial, sans-serif; margin: 0; color: #333; line-height: 1.6; background-color: var(--light); }
+        
+        .lang-switcher { position: absolute; top: 20px; right: 20px; z-index: 1001; }
+        .lang-btn { background: white; border: 1px solid var(--accent); color: var(--accent); padding: 5px 12px; border-radius: 20px; cursor: pointer; font-weight: bold; transition: 0.3s; }
+        .lang-btn:hover { background: var(--accent); color: white; }
+
+        header { background: var(--primary); color: white; padding: 1.5rem; text-align: center; position: sticky; top: 0; z-index: 1000; box-shadow: 0 2px 10px rgba(0,0,0,0.2); }
+        
+        /* Foto e re nga Sheshi Skënderbej */
+        .hero { 
+            background: linear-gradient(rgba(0,0,0,0.1), rgba(0,0,0,0.1)),
+                        url('https://img.sanishtech.com/u/c29ed35dc6105c7d8c66fac26dc5b931.webp') center/cover; 
+            height: 40vh; 
+            display: flex; 
+            align-items: center; 
+            justify-content: center; 
+            color: white; 
+            text-align: center; 
+            text-shadow: 2px 2px 8px rgba(0,0,0,0.6);
+        }
+        
+        .container { max-width: 1100px; margin: auto; padding: 2rem; }
+        .apartment-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 2.5rem; margin-top: 2rem; }
+        .card { background: white; border-radius: 15px; overflow: hidden; box-shadow: 0 5px 15px rgba(0,0,0,0.08); transition: 0.3s; position: relative; }
+        .card:hover { transform: translateY(-10px); }
+        
+        /* Fotot e plota si screenshot-e me emrin lart */
+        .card img { width: 100%; height: auto; display: block; }
+        
+        .card-info { padding: 1.5rem; border-top: 1px solid #eee; }
+        .features { display: flex; gap: 12px; font-size: 0.85rem; color: #7f8c8d; margin: 15px 0; font-weight: bold; }
+        
+        .reviews-section { background: #fff; padding: 3rem 1rem; margin-top: 4rem; border-radius: 15px; box-shadow: 0 5px 15px rgba(0,0,0,0.05); }
+        .review-card { padding: 20px; border-bottom: 1px solid #eee; margin-bottom: 10px; text-align: left; max-width: 800px; margin: auto; }
+        .stars { color: #f1c40f; font-size: 1.2rem; }
+        .reviewer-name { font-weight: bold; display: block; margin-top: 5px; color: var(--primary); }
+
+        .taxi-service { background: white; border-radius: 15px; padding: 2.5rem; margin-top: 4rem; box-shadow: 0 5px 20px rgba(0,0,0,0.05); border: 1px solid #e0e0e0; }
+        .taxi-header { display: flex; align-items: center; gap: 15px; margin-bottom: 15px; }
+
+        .btn { display: inline-block; background: var(--accent); color: white; padding: 0.9rem 1.8rem; text-decoration: none; border-radius: 50px; font-weight: bold; transition: 0.3s; text-align: center; border: none; cursor: pointer; }
+        .btn:hover { opacity: 0.9; transform: scale(1.05); }
+        .btn-taxi { background: var(--secondary); }
+        
+        .whatsapp-float { position: fixed; width: 70px; height: 70px; bottom: 30px; right: 30px; background-color: #25d366; color: #FFF; border-radius: 50px; text-align: center; box-shadow: 2px 5px 20px rgba(0,0,0,0.3); z-index: 1000; display: flex; flex-direction: column; align-items: center; justify-content: center; text-decoration: none; }
+        
+        footer { background: var(--primary); color: white; padding: 3rem 1rem; text-align: center; margin-top: 5rem; }
+        .copyright { margin-top: 2rem; opacity: 0.7; font-size: 0.9rem; }
+    </style>
+</head>
+<body>
+
+<div class="lang-switcher">
+    <button class="lang-btn" onclick="toggleLanguage()">EN / SQ</button>
+</div>
+
+<header>
+    <h1 id="nav-title">City Center Rentals Tirana</h1>
+</header>
+
+<section class="hero">
+    <div class="hero-content">
+        <h2 id="hero-h2" style="font-size: 2.5rem;">Akomodimi Juaj në Zemër të Kryeqytetit</h2>
+    </div>
+</section>
+
+<div class="container">
+    <h2 id="apt-title" style="text-align: center; font-size: 2rem; margin-bottom: 2rem;">Zgjidhni Apartamentin Tuaj</h2>
+    
+    <div class="apartment-grid">
+        <div class="card">
+            <img src="https://img.sanishtech.com/u/3c700c56854e05ce81205210d001a58a.jpg" alt="City Center Bazaar Apartment">
+            <div class="card-info">
+                <h3>City Center Bazaar Apartment</h3>
+                <p id="bazaar-desc">Apartament modern te Pazari i Ri. Tradita dhe jeta e natës në një vend.</p>
+                <div class="features">
+                    <span id="feat-bazaar">📶 Wi-Fi | 🍳 Kuzhinë | 🧺 Larëse</span>
+                </div>
+                <a href="https://www.booking.com/Share-kTT0Cr" target="_blank" class="btn book-btn">Rezervo në Booking</a>
+            </div>
+        </div>
+
+        <div class="card">
+            <img src="https://img.sanishtech.com/u/2f472bf4e3fefef4b71784296431b280.jpg" alt="City Center Piazza Studio">
+            <div class="card-info">
+                <h3>City Center Piazza Studio</h3>
+                <p id="piazza-desc">Studio elegante vetëm pak hapa nga qendra dhe Sheshi Skënderbej.</p>
+                <div class="features">
+                    <span id="feat-piazza">📍 Qendër | 📶 Wi-Fi | ❄️ AC</span>
+                </div>
+                <a href="https://www.booking.com/Share-CZeOyo" target="_blank" class="btn book-btn">Rezervo në Booking</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="reviews-section">
+        <h2 id="rev-title" style="text-align: center;">Vlerësimet nga Klientët</h2>
+        <div class="review-card">
+            <div class="stars">★★★★★ <span style="background:#003580; color:white; padding:2px 6px; border-radius:4px; font-size:0.8rem;">10</span></div>
+            <p id="rev-1">"Right in the heart of Tirana, self checking for us who travel at different times, a perfect studio flat, with everything you needed."</p>
+            <span class="reviewer-name">Asim, Albania (Booking.com)</span>
+        </div>
+        <div class="review-card" style="border:none;">
+            <div class="stars">★★★★★ <span style="background:#003580; color:white; padding:2px 6px; border-radius:4px; font-size:0.8rem;">10</span></div>
+            <p id="rev-2">"It's easy and direct checkin. What you see in the photos are the same in person."</p>
+            <span class="reviewer-name">Rj, UK (Booking.com)</span>
+        </div>
+    </div>
+
+    <div class="taxi-service">
+        <div class="taxi-header">
+            <span style="font-size: 3rem;">🚕</span>
+            <h2 id="taxi-title" style="margin: 0; color: var(--secondary);">Mia Taxi - Transport & Ture</h2>
+        </div>
+        <p id="taxi-desc">Shërbim taksie elektrike 24/7. Nga aeroporti direkt në apartament me siguri dhe korrektësi.</p>
+        <a href="https://wa.me/355686060333" class="btn btn-taxi" id="btn-taxi-res">Rezervo Taxi (WhatsApp)</a>
+    </div>
+</div>
+
+<footer>
+    <p id="footer-apt">Akomodimi: +355 69 65 63 632 | Taxi: +355 68 60 60 333</p>
+    <div class="copyright">&copy; 2026 City Center Rentals & Mia Taxi. Të gjitha të drejtat të rezervuara.</div>
+</footer>
+
+<a href="https://wa.me/355696563632" class="whatsapp-float" target="_blank">
+   <span style="font-size: 28px;">💬</span>
+</a>
+
+<script>
+    let currentLang = 'sq';
+    const translations = {
+        sq: {
+            heroH2: "Akomodimi Juaj në Zemër të Kryeqytetit",
+            aptTitle: "Zgjidhni Apartamentin Tuaj",
+            piazzaDesc: "Studio elegante vetëm pak hapa nga qendra dhe Sheshi Skënderbej.",
+            bazaarDesc: "Apartament modern te Pazari i Ri. Tradita dhe jeta e natës në një vend.",
+            featPiazza: "📍 Qendër | 📶 Wi-Fi | ❄️ AC",
+            featBazaar: "📶 Wi-Fi | 🍳 Kuzhinë | 🧺 Larëse",
+            bookBtn: "Rezervo në Booking",
+            revTitle: "Vlerësimet nga Klientët",
+            taxiTitle: "Mia Taxi - Transport & Ture",
+            btnTaxiRes: "Rezervo Taxi (WhatsApp)"
+        },
+        en: {
+            heroH2: "Your Home in the Heart of the Capital",
+            aptTitle: "Choose Your Apartment",
+            piazzaDesc: "Elegant studio just steps away from the center and Skanderbeg Square.",
+            bazaarDesc: "Modern apartment at the New Bazaar. Tradition and nightlife in one place.",
+            featPiazza: "📍 Center | 📶 Wi-Fi | ❄️ AC",
+            featBazaar: "📶 Wi-Fi | 🍳 Kitchen | 🧺 Washer",
+            bookBtn: "Book on Booking.com",
+            revTitle: "Guest Reviews",
+            taxiTitle: "Mia Taxi - Transport & Tours",
+            btnTaxiRes: "Book Taxi (WhatsApp)"
+        }
+    };
+
+    function toggleLanguage() {
+        currentLang = currentLang === 'sq' ? 'en' : 'sq';
+        document.getElementById('hero-h2').innerText = translations[currentLang].heroH2;
+        document.getElementById('apt-title').innerText = translations[currentLang].aptTitle;
+        document.getElementById('piazza-desc').innerText = translations[currentLang].piazzaDesc;
+        document.getElementById('bazaar-desc').innerText = translations[currentLang].bazaarDesc;
+        document.getElementById('feat-piazza').innerText = translations[currentLang].featPiazza;
+        document.getElementById('feat-bazaar').innerText = translations[currentLang].featBazaar;
+        document.getElementById('rev-title').innerText = translations[currentLang].revTitle;
+        document.getElementById('taxi-title').innerText = translations[currentLang].taxiTitle;
+        document.getElementById('btn-taxi-res').innerText = translations[currentLang].btnTaxiRes;
+        
+        let buttons = document.querySelectorAll('.book-btn');
+        buttons.forEach(btn => btn.innerText = translations[currentLang].bookBtn);
+    }
+</script>
+
+</body>
+  </html>

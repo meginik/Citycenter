@@ -19,7 +19,6 @@
 
         header { background: var(--primary); color: white; padding: 1.5rem; text-align: center; position: sticky; top: 0; z-index: 1000; box-shadow: 0 2px 10px rgba(0,0,0,0.2); }
         
-        /* Foto e re nga Sheshi Skënderbej */
         .hero { 
             background: linear-gradient(rgba(0,0,0,0.1), rgba(0,0,0,0.1)),
                         url('https://img.sanishtech.com/u/c29ed35dc6105c7d8c66fac26dc5b931.webp') center/cover; 
@@ -36,11 +35,10 @@
         .apartment-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 2.5rem; margin-top: 2rem; }
         .card { background: white; border-radius: 15px; overflow: hidden; box-shadow: 0 5px 15px rgba(0,0,0,0.08); transition: 0.3s; position: relative; }
         .card:hover { transform: translateY(-10px); }
-        
-        /* Fotot e plota si screenshot-e me emrin lart */
         .card img { width: 100%; height: auto; display: block; }
         
         .card-info { padding: 1.5rem; border-top: 1px solid #eee; }
+        .badge { position: absolute; top: 15px; right: 15px; background: #003580; color: white; padding: 5px 10px; border-radius: 5px; font-weight: bold; }
         .features { display: flex; gap: 12px; font-size: 0.85rem; color: #7f8c8d; margin: 15px 0; font-weight: bold; }
         
         .reviews-section { background: #fff; padding: 3rem 1rem; margin-top: 4rem; border-radius: 15px; box-shadow: 0 5px 15px rgba(0,0,0,0.05); }
@@ -58,7 +56,6 @@
         .whatsapp-float { position: fixed; width: 70px; height: 70px; bottom: 30px; right: 30px; background-color: #25d366; color: #FFF; border-radius: 50px; text-align: center; box-shadow: 2px 5px 20px rgba(0,0,0,0.3); z-index: 1000; display: flex; flex-direction: column; align-items: center; justify-content: center; text-decoration: none; }
         
         footer { background: var(--primary); color: white; padding: 3rem 1rem; text-align: center; margin-top: 5rem; }
-        .copyright { margin-top: 2rem; opacity: 0.7; font-size: 0.9rem; }
     </style>
 </head>
 <body>
@@ -68,13 +65,11 @@
 </div>
 
 <header>
-    <h1 id="nav-title">City Center Rentals Tirana</h1>
+    <h1>City Center Rentals Tirana</h1>
 </header>
 
 <section class="hero">
-    <div class="hero-content">
-        <h2 id="hero-h2" style="font-size: 2.5rem;">Akomodimi Juaj në Zemër të Kryeqytetit</h2>
-    </div>
+    <h2 id="hero-h2" style="font-size: 2.5rem;">Akomodimi Juaj në Zemër të Kryeqytetit</h2>
 </section>
 
 <div class="container">
@@ -82,6 +77,7 @@
     
     <div class="apartment-grid">
         <div class="card">
+            <span class="badge">9.5</span>
             <img src="https://img.sanishtech.com/u/3c700c56854e05ce81205210d001a58a.jpg" alt="City Center Bazaar Apartment">
             <div class="card-info">
                 <h3>City Center Bazaar Apartment</h3>
@@ -94,6 +90,7 @@
         </div>
 
         <div class="card">
+            <span class="badge">8.2</span>
             <img src="https://img.sanishtech.com/u/2f472bf4e3fefef4b71784296431b280.jpg" alt="City Center Piazza Studio">
             <div class="card-info">
                 <h3>City Center Piazza Studio</h3>
@@ -109,12 +106,12 @@
     <div class="reviews-section">
         <h2 id="rev-title" style="text-align: center;">Vlerësimet nga Klientët</h2>
         <div class="review-card">
-            <div class="stars">★★★★★ <span style="background:#003580; color:white; padding:2px 6px; border-radius:4px; font-size:0.8rem;">10</span></div>
+            <div class="stars">★★★★★</div>
             <p id="rev-1">"Right in the heart of Tirana, self checking for us who travel at different times, a perfect studio flat, with everything you needed."</p>
             <span class="reviewer-name">Asim, Albania (Booking.com)</span>
         </div>
         <div class="review-card" style="border:none;">
-            <div class="stars">★★★★★ <span style="background:#003580; color:white; padding:2px 6px; border-radius:4px; font-size:0.8rem;">10</span></div>
+            <div class="stars">★★★★★</div>
             <p id="rev-2">"It's easy and direct checkin. What you see in the photos are the same in person."</p>
             <span class="reviewer-name">Rj, UK (Booking.com)</span>
         </div>
@@ -126,13 +123,14 @@
             <h2 id="taxi-title" style="margin: 0; color: var(--secondary);">Mia Taxi - Transport & Ture</h2>
         </div>
         <p id="taxi-desc">Shërbim taksie elektrike 24/7. Nga aeroporti direkt në apartament me siguri dhe korrektësi.</p>
+        <p style="font-weight: bold; color: var(--primary);">Vizitoni: <a href="http://www.miataxi.al" target="_blank" style="color: var(--secondary);">www.miataxi.al</a></p>
         <a href="https://wa.me/355686060333" class="btn btn-taxi" id="btn-taxi-res">Rezervo Taxi (WhatsApp)</a>
     </div>
 </div>
 
 <footer>
-    <p id="footer-apt">Akomodimi: +355 69 65 63 632 | Taxi: +355 68 60 60 333</p>
-    <div class="copyright">&copy; 2026 City Center Rentals & Mia Taxi. Të gjitha të drejtat të rezervuara.</div>
+    <p>Akomodimi: +355 69 65 63 632 | Taxi: +355 68 60 60 333</p>
+    <div class="copyright">&copy; 2026 City Center Rentals & Mia Taxi.</div>
 </footer>
 
 <a href="https://wa.me/355696563632" class="whatsapp-float" target="_blank">
@@ -151,7 +149,10 @@
             featBazaar: "📶 Wi-Fi | 🍳 Kuzhinë | 🧺 Larëse",
             bookBtn: "Rezervo në Booking",
             revTitle: "Vlerësimet nga Klientët",
+            rev1: '"Right in the heart of Tirana, self checking for us who travel at different times, a perfect studio flat, with everything you needed."',
+            rev2: '"It\'s easy and direct checkin. What you see in the photos are the same in person."',
             taxiTitle: "Mia Taxi - Transport & Ture",
+            taxiDesc: "Shërbim taksie elektrike 24/7. Nga aeroporti direkt në apartament me siguri dhe korrektësi.",
             btnTaxiRes: "Rezervo Taxi (WhatsApp)"
         },
         en: {
@@ -163,7 +164,10 @@
             featBazaar: "📶 Wi-Fi | 🍳 Kitchen | 🧺 Washer",
             bookBtn: "Book on Booking.com",
             revTitle: "Guest Reviews",
+            rev1: '"Right in the heart of Tirana, self checking for us who travel at different times, a perfect studio flat, with everything you needed."',
+            rev2: '"It\'s easy and direct checkin. What you see in the photos are the same in person."',
             taxiTitle: "Mia Taxi - Transport & Tours",
+            taxiDesc: "24/7 electric taxi service. From the airport directly to your apartment with safety.",
             btnTaxiRes: "Book Taxi (WhatsApp)"
         }
     };
@@ -177,7 +181,10 @@
         document.getElementById('feat-piazza').innerText = translations[currentLang].featPiazza;
         document.getElementById('feat-bazaar').innerText = translations[currentLang].featBazaar;
         document.getElementById('rev-title').innerText = translations[currentLang].revTitle;
+        document.getElementById('rev-1').innerText = translations[currentLang].rev1;
+        document.getElementById('rev-2').innerText = translations[currentLang].rev2;
         document.getElementById('taxi-title').innerText = translations[currentLang].taxiTitle;
+        document.getElementById('taxi-desc').innerText = translations[currentLang].taxiDesc;
         document.getElementById('btn-taxi-res').innerText = translations[currentLang].btnTaxiRes;
         
         let buttons = document.querySelectorAll('.book-btn');
@@ -186,4 +193,4 @@
 </script>
 
 </body>
-  </html>
+</html>
